@@ -259,7 +259,7 @@ namespace ProtocGenOpcua
         => s_uaTypes.TryGetValue(protoType, out var uaType) ? uaType : GetTypeShortName(protoType) + "DataType";
 
         static string SnakeToPascal(string source)
-            => new CultureInfo("en-US").TextInfo.ToTitleCase(source).Replace("_", "");
+            => new CultureInfo("en-US").TextInfo.ToTitleCase(source.ToLowerInvariant()).Replace("_", "");
 
         static IEnumerable<DescriptorProto> GetAllMessageTypes(IEnumerable<FileDescriptorProto> protos)
             => protos.SelectMany((x) => GetAllMessageTypes(x.MessageType));

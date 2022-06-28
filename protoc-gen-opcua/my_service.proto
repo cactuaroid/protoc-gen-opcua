@@ -34,8 +34,8 @@ message MyMessage {
 		}
 
 		enum NestedEnum {
-			FIRST = 0;
-			SECOND = 1;
+			FIRST_IS_ZERO = 0;
+			SECOND_IS_ONE = 1;
 		}
 	}
 }
