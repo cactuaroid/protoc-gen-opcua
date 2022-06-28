@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+// well known types
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+import "my_enum.proto";
+
+option csharp_namespace = "ProtocGenOpcua";
+
+package ProtocGenOpcua;
+
+service MyService {
+  rpc Write(MyMessage) returns (google.protobuf.Empty) {}
+  rpc Read(google.protobuf.Empty) returns (MyMessage) {}
+}
+
+message MyMessage {
+	string message_tag = 1;
+	NestedContent message_content = 2;
+	google.protobuf.Timestamp registered_time = 3;
+
+	message NestedContent {
+		NestedContent2 content2 = 1;
+		NestedEnum nested_enum = 2;
+		MyEnum my_enum = 3; // defined in my_enum.proto
+
+		message NestedContent2 {
+			repeated string repeated_field = 1;
+			oneof oneof_value {
+				int32 oneof_value1 = 2;
+				int32 oneof_value2 = 3;
+			}
+		}
+
+		enum NestedEnum {
+			FIRST = 0;
+			SECOND = 1;
+		}
+	}
+}
