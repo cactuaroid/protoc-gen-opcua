@@ -16,26 +16,26 @@ service MyService {
 }
 
 message MyMessage {
-	string message_tag = 1;
-	NestedContent message_content = 2;
-	google.protobuf.Timestamp registered_time = 3;
+  string message_tag = 1;
+  NestedContent message_content = 2;
+  google.protobuf.Timestamp registered_time = 3;
 
-	message NestedContent {
-		NestedContent2 content2 = 1;
-		NestedEnum nested_enum = 2;
-		MyEnum my_enum = 3; // defined in my_enum.proto
+  message NestedContent {
+    NestedContent2 content2 = 1;
+    NestedEnum nested_enum = 2;
+    MyEnum my_enum = 3; // defined in my_enum.proto
 
-		message NestedContent2 {
-			repeated string repeated_field = 1;
-			oneof oneof_value {
-				int32 oneof_value1 = 2;
-				int32 oneof_value2 = 3;
-			}
-		}
+    message NestedContent2 {
+      repeated string repeated_field = 1;
+      oneof oneof_value {
+        int32 oneof_value1 = 2;
+        int32 oneof_value2 = 3;
+      }
+    }
 
-		enum NestedEnum {
-			FIRST_IS_ZERO = 0;
-			SECOND_IS_ONE = 1;
-		}
-	}
+    enum NestedEnum {
+      FIRST_IS_ZERO = 0;
+      SECOND_IS_ONE = 1;
+    }
+  }
 }
