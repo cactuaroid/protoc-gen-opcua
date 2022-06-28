@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Text;
 using System.Xml.Linq;
 
-namespace ProtocGenOpcUa
+namespace ProtocGenOpcua
 {
     // command line for compile
     // protoc.exe --plugin=protoc-gen-opcua.exe --opcua_out=./ --proto_path=%userprofile%\.nuget\packages\google.protobuf.tools\3.21.1\tools --proto_path=./ my_service.proto
