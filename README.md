@@ -1,5 +1,5 @@
 # Overview
-protoc plugin for generating OPC UA design xml for [UA-ModelCompiler](https://github.com/OPCFoundation/UA-ModelCompiler/) from gRPC .proto.
+protoc-gen-opcua is the protoc plugin for generating OPC UA design xml for [UA-ModelCompiler](https://github.com/OPCFoundation/UA-ModelCompiler/) from gRPC .proto.
 
 - `stream` is ignored.
 - `oneof` is ignored and all fields simply being listed.
